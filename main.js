@@ -33,12 +33,27 @@ for (let i = 0; i < people.length; i++) {
 }
 
 //ciclo forEach
-people.forEach((name) => {
+const peopleEach = people.forEach((name) => {
   console.log(name.name);
 });
 
-// Crea un nuovo array in cui tutti i numeri siano incrementati di 1
+// 3 Crea un nuovo array in cui tutti i numeri siano incrementati di 1
 const numbers = [2, 8, 4, 7, 2, 87];
+
+//ciclo for
+let newArrayNumber = [];
+for (let i = 0; i < numbers.length; i++) {
+  const thisNumber = numbers[i] + 1;
+  newArrayNumber.push(thisNumber);
+}
+console.log(newArrayNumber);
+
+//map
+
+const MapNumb = numbers.map((number) => {
+  return number + 1;
+});
+console.log(MapNumb);
 
 const posts = [
   { author: "Marco", date: "12/3/2021", content: "lorem ipsum..." },
