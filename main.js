@@ -1,14 +1,28 @@
+document.writeln("hola");
+
+//1
 const names = ["Edoardo", "Simone", "Francesco"];
 
 // Stampa in console tutti i nomi
+// con ciclo for
+for (let i = 0; i < names.length; i++) {
+  const name = names[i];
+  console.log(name);
+  document.writeln(name);
+}
+//con ciclo forEach sintassi : array.forEach(function(currentValue, index, arr), thisValue)
 
+names.forEach((name, index, array) => {
+  console.log(name, index, array);
+});
+
+//2
+// Stampa in console tutti i nomi
 const people = [
   { name: "Paolo", age: 35 },
   { name: "Giulia", age: 24 },
   { name: "Marco", age: 67 },
 ];
-
-// Stampa in console tutti i nomi
 
 const numbers = [2, 8, 4, 7, 2, 87];
 
