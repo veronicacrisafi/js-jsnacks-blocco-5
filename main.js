@@ -23,10 +23,22 @@ const people = [
   { name: "Giulia", age: 24 },
   { name: "Marco", age: 67 },
 ];
+console.log(people);
 
-const numbers = [2, 8, 4, 7, 2, 87];
+//con ciclo for
+
+for (let i = 0; i < people.length; i++) {
+  const onlyName = people[i];
+  console.log(onlyName.name);
+}
+
+//ciclo forEach
+people.forEach((name) => {
+  console.log(name.name);
+});
 
 // Crea un nuovo array in cui tutti i numeri siano incrementati di 1
+const numbers = [2, 8, 4, 7, 2, 87];
 
 const posts = [
   { author: "Marco", date: "12/3/2021", content: "lorem ipsum..." },
