@@ -55,6 +55,7 @@ const MapNumb = numbers.map((number) => {
 });
 console.log(MapNumb);
 
+// Crea un nuovo array coi nomi di tutti gli autori
 const posts = [
   { author: "Marco", date: "12/3/2021", content: "lorem ipsum..." },
   { author: "Luca", date: "30/6/2021", content: "lorem ipsum..." },
@@ -62,7 +63,23 @@ const posts = [
   { author: "Enrico", date: "09/12/2021", content: "lorem ipsum..." },
 ];
 
-// Crea un nuovo array coi nomi di tutti gli autori
+// ciclo for
+
+let authorName = [];
+for (let i = 0; i < posts.length; i++) {
+  const thisPost = posts[i];
+  const onlyAuthor = thisPost.author;
+  console.log(onlyAuthor);
+  authorName.push(onlyAuthor);
+}
+console.log(authorName);
+
+//map
+
+const mapAuthor = posts.map((author) => {
+  return `${author.author}`;
+});
+console.log(mapAuthor);
 
 const nums = [2, 8, 4, 7, 12, 87];
 
