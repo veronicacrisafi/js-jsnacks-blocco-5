@@ -172,6 +172,17 @@ const students = [
   },
 ];
 
+// ciclo for
+for (let i = 0; i < students.length; i++) {
+  const thisIdStudents = students[i];
+  //console.log(thisIdStudents);
+  const idStudent = thisIdStudents.id;
+  //console.log(idStudent);
+  if (idStudent === 2) {
+    console.log(idStudent);
+  }
+}
+
 // Recuperare la classe dello studente Marco Lanci
 const students_2 = [
   {
