@@ -55,7 +55,7 @@ const MapNumb = numbers.map((number) => {
 });
 console.log(MapNumb);
 
-// Crea un nuovo array coi nomi di tutti gli autori
+// 4 Crea un nuovo array coi nomi di tutti gli autori
 const posts = [
   { author: "Marco", date: "12/3/2021", content: "lorem ipsum..." },
   { author: "Luca", date: "30/6/2021", content: "lorem ipsum..." },
@@ -81,10 +81,34 @@ const mapAuthor = posts.map((author) => {
 });
 console.log(mapAuthor);
 
+// 5 Crea un array a partire dall'array nums, che abbia solo i numeri pari
 const nums = [2, 8, 4, 7, 12, 87];
 
-// Crea un array a partire dall'array nums, che abbia solo i numeri pari
+// ciclo for
+function getEvenNumbers(nums) {
+  const evenNumbers = [];
+  for (let i = 0; i < nums.length; i++) {
+    const thisEvenNum = nums[i];
+    if (thisEvenNum % 2 === 0) {
+      evenNumbers.push(thisEvenNum);
+    }
+  }
+  return evenNumbers;
+}
+const even = getEvenNumbers(nums);
+console.log(even);
 
+//filter (avevo usato map ma con map i valori non corrispondenti uscivano come undefind)
+let evenArrayMap = [];
+const mapEvenNum = nums.filter((nums) => {
+  if (nums % 2 === 0) {
+    return nums;
+  }
+});
+
+console.log(mapEvenNum);
+
+// A partire dall'array fornito, crea due array. Uno con le matite lunghe almeno 15cm. L'altro con le restanti.
 const pencils = [
   { brand: "Faber-Castell", weight: 8, sizeInCm: 12 },
   { brand: "Staedtler", weight: 9, sizeInCm: 18 },
@@ -98,8 +122,7 @@ const pencils = [
   { brand: "Caran d’Ache", weight: 11, sizeInCm: 13 },
 ];
 
-// A partire dall'array fornito, crea due array. Uno con le matite lunghe almeno 15cm. L'altro con le restanti.
-
+// Recupera i dati dello studente con id 2
 const students = [
   {
     id: 1,
@@ -121,8 +144,7 @@ const students = [
   },
 ];
 
-// Recupera i dati dello studente con id 2
-
+// Recuperare la classe dello studente Marco Lanci
 const students_2 = [
   {
     id: 1,
@@ -143,5 +165,3 @@ const students_2 = [
     classroom: "5B",
   },
 ];
-
-// Recuperare la classe dello studente Marco Lanci
