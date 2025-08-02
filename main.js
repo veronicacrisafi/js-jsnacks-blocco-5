@@ -139,10 +139,16 @@ console.log(shortPen);
 
 //filter
 const newArrayLongPen = [];
-const longPencils = pencils.filter((pencil) => pencil.sizeInCm >= 15);
-const shortPencils = pencils.filter((pencil) => pencil.sizeInCm < 15);
-console.log(longPencils);
-console.log(shortPencils);
+const newArrayShortPen = [];
+const longPencils = pencils.filter((pencil) => {
+  if (pencil.sizeInCm >= 15) {
+    return newArrayLongPen.push(pencil.sizeInCm);
+  } else {
+    return newArrayShortPen.push(pencil.sizeInCm);
+  }
+});
+console.log(newArrayLongPen);
+console.log(newArrayShortPen);
 
 // Recupera i dati dello studente con id 2
 const students = [
