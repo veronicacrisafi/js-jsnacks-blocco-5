@@ -108,7 +108,7 @@ const mapEvenNum = nums.filter((nums) => {
 
 console.log(mapEvenNum);
 
-// A partire dall'array fornito, crea due array. Uno con le matite lunghe almeno 15cm. L'altro con le restanti.
+// 6 A partire dall'array fornito, crea due array. Uno con le matite lunghe almeno 15cm. L'altro con le restanti.
 const pencils = [
   { brand: "Faber-Castell", weight: 8, sizeInCm: 12 },
   { brand: "Staedtler", weight: 9, sizeInCm: 18 },
@@ -121,6 +121,28 @@ const pencils = [
   { brand: "Caran d’Ache", weight: 12, sizeInCm: 22 },
   { brand: "Caran d’Ache", weight: 11, sizeInCm: 13 },
 ];
+// ciclo for
+let newArrayPenCm = [];
+let shortPen = [];
+for (let i = 0; i < pencils.length; i++) {
+  const thisPencil = pencils[i];
+  //console.log(thisPencil);
+  const onlySize = thisPencil.sizeInCm;
+  if (onlySize >= 15) {
+    newArrayPenCm.push(onlySize);
+  } else {
+    shortPen.push(thisPencil.sizeInCm);
+  }
+}
+console.log(newArrayPenCm);
+console.log(shortPen);
+
+//filter
+const newArrayLongPen = [];
+const longPencils = pencils.filter((pencil) => pencil.sizeInCm >= 15);
+const shortPencils = pencils.filter((pencil) => pencil.sizeInCm < 15);
+console.log(longPencils);
+console.log(shortPencils);
 
 // Recupera i dati dello studente con id 2
 const students = [
