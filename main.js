@@ -150,7 +150,7 @@ const longPencils = pencils.filter((pencil) => {
 console.log(newArrayLongPen);
 console.log(newArrayShortPen);
 
-// Recupera i dati dello studente con id 2
+// 8 Recupera i dati dello studente con id 2
 const students = [
   {
     id: 1,
@@ -184,6 +184,12 @@ for (let i = 0; i < students.length; i++) {
 }
 
 //find
+let twoIdStudent = students.find((students) => {
+  if (students.id === 2) {
+    return students.id;
+  }
+});
+console.log(twoIdStudent);
 
 // Recuperare la classe dello studente Marco Lanci
 const students_2 = [
