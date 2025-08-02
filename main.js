@@ -179,9 +179,11 @@ for (let i = 0; i < students.length; i++) {
   const idStudent = thisIdStudents.id;
   //console.log(idStudent);
   if (idStudent === 2) {
-    console.log(idStudent);
+    console.log(thisIdStudents);
   }
 }
+
+//find
 
 // Recuperare la classe dello studente Marco Lanci
 const students_2 = [
