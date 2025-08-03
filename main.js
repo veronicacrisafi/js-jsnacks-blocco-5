@@ -230,3 +230,214 @@ let onlyMarcoClass = students_2.find(
 if (onlyMarcoClass) {
   console.log(onlyMarcoClass.classroom);
 }
+
+//EXTRA
+/*Snack 1
+Crea un array composto da 10 automobili.
+Ogni oggetto automobile avrà le seguenti proprietà: marca, modello e alimentazione (benzina, diesel, gpl, elettrico, metano).
+Dividi le automobili in 3 array separati: nel primo array solo le auto a benzina, nel secondo solo le auto a diesel, nel terzo il resto delle auto.
+Infine stampa separatamente i 3 array.
+
+
+Snack 2
+A partire da un array di stringhe, crea un secondo array formattando le stringhe del primo array in minuscolo e con l’iniziale maiuscola.
+
+
+Snack 3
+Crea un array di oggetti che rappresentano degli animali.
+Ogni animale ha un nome, una famiglia e una classe.
+Crea un nuovo array con la lista dei mammiferi
+
+
+
+
+Snack 4
+Crea un array di oggetti che rappresentano delle persone.
+Ogni persona ha un nome, un cognome e un’età.
+
+
+Crea quindi un nuovo array inserendo, per ogni persona, una frase con il nome e cognome e l’indicazione se può guidare, in base all’età.
+
+
+*/
+
+/* Crea un array composto da 10 automobili.
+Ogni oggetto automobile avrà le seguenti proprietà: marca, modello e alimentazione (benzina, diesel, gpl, elettrico, metano).
+Dividi le automobili in 3 array separati: nel primo array solo le auto a benzina, nel secondo solo le auto a diesel, nel terzo il resto delle auto.
+Infine stampa separatamente i 3 array.*/
+
+const automobili = [
+  { marca: "Fiat", modello: "Panda", alimentazione: "benzina" },
+  { marca: "Volkswagen", modello: "Golf", alimentazione: "diesel" },
+  { marca: "Renault", modello: "Clio", alimentazione: "gpl" },
+  { marca: "Tesla", modello: "Model 3", alimentazione: "elettrico" },
+  { marca: "Ford", modello: "Focus", alimentazione: "benzina" },
+  { marca: "Peugeot", modello: "208", alimentazione: "diesel" },
+  { marca: "Citroën", modello: "C3", alimentazione: "gpl" },
+  { marca: "Nissan", modello: "Leaf", alimentazione: "elettrico" },
+  { marca: "Alfa Romeo", modello: "Giulia", alimentazione: "benzina" },
+  { marca: "Lancia", modello: "Ypsilon", alimentazione: "metano" },
+];
+
+let benzinaCar = [];
+let dieselCar = [];
+let otherCar = [];
+
+//ciclo for
+
+for (let i = 0; i < automobili.length; i++) {
+  const thisAuto = automobili[i];
+  if (thisAuto.alimentazione === "benzina") {
+    benzinaCar.push(thisAuto);
+  } else if (thisAuto.alimentazione === "diesel") {
+    dieselCar.push(thisAuto);
+  } else {
+    otherCar.push(thisAuto);
+  }
+}
+console.log(benzinaCar);
+console.log(dieselCar);
+console.log(otherCar);
+
+//filter
+
+let benzCar = automobili.filter(
+  (automobili) => automobili.alimentazione === "benzina"
+);
+console.log(benzCar);
+
+let diesCar = automobili.filter(
+  (automobili) => automobili.alimentazione === "diesel"
+);
+console.log(diesCar);
+
+let othCar = automobili.filter(
+  (automobili) =>
+    automobili.alimentazione !== "benzina" &&
+    automobili.alimentazione !== "diesel"
+);
+console.log(othCar);
+
+/*Snack 2
+A partire da un array di stringhe,
+crea un secondo array formattando le stringhe del primo array in minuscolo
+e con l’iniziale maiuscola.*/
+const mieiNomi = ["alice", "marco", "luca", "sara"];
+
+//con ciclo for
+let nomiMaiusc = [];
+for (let i = 0; i < mieiNomi.length; i++) {
+  const thisNome = mieiNomi[i];
+  let maiuscole =
+    thisNome.charAt(0).toUpperCase() + thisNome.slice(1).toLowerCase();
+  console.log(maiuscole);
+  nomiMaiusc.push(maiuscole);
+}
+console.log(nomiMaiusc);
+
+//con map
+let nomiFormattati = mieiNomi.map((nome) => {
+  return nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
+});
+console.log(nomiFormattati);
+
+/* Snack 3
+Crea un array di oggetti che rappresentano degli animali.
+Ogni animale ha un nome, una famiglia e una classe.
+Crea un nuovo array con la lista dei mammiferi
+*/
+const animali = [
+  {
+    nome: "Leone",
+    famiglia: "Felidi",
+    classe: "Mammifero",
+  },
+  {
+    nome: "Aquila",
+    famiglia: "Accipitridi",
+    classe: "Uccello",
+  },
+  {
+    nome: "Squalo",
+    famiglia: "Squalidi",
+    classe: "Pesce",
+  },
+  {
+    nome: "Tartaruga",
+    famiglia: "Testudinidi",
+    classe: "Reptile",
+  },
+  {
+    nome: "Foca",
+    famiglia: "Phocidi",
+    classe: "Mammifero",
+  },
+];
+
+//ciclo for
+let classMammifero = [];
+for (let i = 0; i < animali.length; i++) {
+  const thisAnimale = animali[i];
+  //console.log(thisAnimale);
+  if (thisAnimale.classe === "Mammifero") {
+    classMammifero.push(thisAnimale);
+  }
+}
+console.log(classMammifero);
+
+//filter
+let arrAnimalMammifero = animali.filter(
+  (classe) => classe.classe === "Mammifero"
+);
+console.log(arrAnimalMammifero);
+
+/* Snack 4
+Crea un array di oggetti che rappresentano delle persone.
+Ogni persona ha un nome, un cognome e un’età.
+Crea quindi un nuovo array inserendo per ogni persona,
+una frase con il nome e cognome e l’indicazione se può guidare, in base all’età.
+*/
+const persone = [
+  {
+    nome: "Mario",
+    cognome: "Rossi",
+    eta: 30,
+  },
+  {
+    nome: "Luca",
+    cognome: "Bianchi",
+    eta: 15,
+  },
+  {
+    nome: "Sara",
+    cognome: "Verdi",
+    eta: 28,
+  },
+];
+
+//ciclo for
+let canDrive = [];
+let cantDrive = [];
+for (let i = 0; i < persone.length; i++) {
+  const thisPerson = persone[i];
+  if (thisPerson.eta > 18) {
+    canDrive.push(
+      `${thisPerson.nome} ${thisPerson.cognome} può guidare in quanto maggiorenne`
+    );
+  } else {
+    cantDrive.push(
+      `${thisPerson.nome} ${thisPerson.cognome} non può guidare in quanto minorenne`
+    );
+  }
+}
+console.log(canDrive);
+console.log(cantDrive);
+
+//map
+
+let whoCanDrive = persone.map((persona) => {
+  if (persona.eta > 18)
+    return console.log(
+      `${persona.nome} ${persona.cognome} può guidare in quanto maggiorenne`
+    );
+});
