@@ -191,7 +191,7 @@ let twoIdStudent = students.find((students) => {
 });
 console.log(twoIdStudent);
 
-// Recuperare la classe dello studente Marco Lanci
+// 9 Recuperare la classe dello studente Marco Lanci
 const students_2 = [
   {
     id: 1,
@@ -212,3 +212,21 @@ const students_2 = [
     classroom: "5B",
   },
 ];
+
+//ciclo for
+
+for (let i = 0; i < students_2.length; i++) {
+  const thisStudent = students_2[i];
+  let marcoStudent = thisStudent.name === "Marco Lanci";
+  if (marcoStudent) {
+    console.log(thisStudent.classroom);
+  }
+}
+
+//find
+let onlyMarcoClass = students_2.find(
+  (student) => student.name === "Marco Lanci"
+);
+if (onlyMarcoClass) {
+  console.log(onlyMarcoClass.classroom);
+}
